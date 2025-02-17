@@ -1,0 +1,27 @@
+<div class="overflow-x-auto border-2 border-base/50 rounded-2xl">
+    <table class="min-w-full divide-y divide-gray-200">
+        <!-- Encabezado de la tabla -->
+        <thead class="bg-gray-50">
+            <tr>
+                <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+            </tr>
+        </thead>
+        <!-- Cuerpo de la tabla -->
+        <tbody class="bg-white divide-y divide-gray-200">
+            <ng-container *ngFor="let entidad of entidades">
+            <tr class="hover:bg-slate-100">
+                <!-- Se inyecta la entidad en el contexto de la plantilla body -->
+                <ng-container *ngTemplateOutlet="bodyTemplate; context: {$implicit: entidad}"></ng-container>
+            </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
+<!-- Ejemplo de sección de paginación (opcional) -->
+<div *ngIf="paginacion" class="mt-4">
+    <nav class="flex justify-center">
+        <!-- Aquí puedes implementar la lógica de paginación -->
+        <span class="text-gray-600">Página {{ paginacion.paginaActual }} de {{ paginacion.totalPaginas }}</span>
+    </nav>
+</div>

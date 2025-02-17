@@ -1,0 +1,31 @@
+<div class="bg-base min-h-screen z-10 text-light-text left-0 w-64 h-screen overflow-hidden">
+
+    <img class="m-auto pr-3 mt-4 w-40"
+            src="pandora-logo.webp"
+            alt="" />
+
+    <div class="w-full pr-3 pt-8">
+
+
+        @for(item of menuItems; track $index) {
+            <a [routerLink]="item.path" routerLinkActive="bg-highlight-2 text-light-text"
+                class="rounded-r-2xl w-full pl-5 py-3 inline-flex space-x-2 items-center text-dark-text hover:bg-highlight hover:text-dark-text transition ease-linear duration-150 ">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5 fill-none stroke-[1.5] stroke-current" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-m font-bold leading-5">
+                        {{ item.title }}
+                    </span>
+                </div>
+            </a>
+            <div class="border-b-1 border-light w-9/10">
+
+            </div>
+        }
+
+    </div>
+</div>

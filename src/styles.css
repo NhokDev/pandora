@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+    --color-base: #220B1C;
+    --color-gold: #D4AF37;
+    --color-highlight: #3D243B;
+    --color-highlight-2: #F28DCE;
+    --color-light: #FAF9F7;
+    --color-light-text: #1F1F1F;
+    --color-dark-text: #F8F8F8
+}
+
+@layer base {
+    h1 {
+        @apply text-2xl font-bold;
+    }
+    h2 {
+        @apply text-xl font-bold;
+    }
+    h3 {
+        @apply text-lg font-semibold;
+    }
+}
+
+@layer components {
+    .main-header {
+        @apply
+            border-b-1
+            p-5
+            bg-white
+            text-base
+            shadow-md;
+
+    }
+
+    .page-container {
+        @apply
+            flex-grow
+            m-7 p-5
+            rounded-2xl
+            bg-white
+            shadow-lg
+            border-base/50 border-1;
+    }
+}

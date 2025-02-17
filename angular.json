@@ -4,6 +4,9 @@
   "newProjectRoot": "projects",
   "projects": {
     "pandora-room": {
+      "i18n": {
+        "sourceLocale": "es-ES"
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
