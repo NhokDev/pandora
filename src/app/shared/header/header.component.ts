@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +10,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class HeaderComponent {
 
     @Input({ required: true}) title!: string;
+
+    // Permite que se pueda pasar un booleano como atributo
+    @Input({ transform: booleanAttribute}) withShadow: boolean = false;
 
     constructor() {}
 
