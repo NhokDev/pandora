@@ -1,0 +1,9 @@
+<div class="flex flex-col h-full">
+    <app-header [title]="currentEntity()" withShadow/>
+    <div class="page-container flex flex-col">
+
+        <pre> {{ entidadAsSignal() | json }}</pre>
+        <pre> {{ entidadAsProperty | json }}</pre>
+    </div>
+
+</div>

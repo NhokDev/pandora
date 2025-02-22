@@ -13,6 +13,11 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/directives/directives.component')
     },
     {
+        path: 'change-detection',
+        title: 'Change Detection',
+        loadComponent: () => import('./pages/change-detection/change-detection.component')
+    },
+    {
         path: '',
         redirectTo: 'table',
         pathMatch: 'full'
