@@ -10,7 +10,7 @@ export class RowFieldDirective implements OnInit {
     // Permite pasar el nombre del campo si en algún momento deseas hacer algo dinámico con él
     @Input('fwkRowField') fieldName!: string;
 
-    @Input() entidad: any;
+    @Input() entity: any;
 
     @Input() textAlign: 'left' | 'right' | 'center' = 'left';
 
@@ -56,7 +56,7 @@ export class RowFieldDirective implements OnInit {
         this.renderer.addClass(this.el.nativeElement, 'py-4');
         this.renderer.addClass(this.el.nativeElement, 'whitespace-nowrap');
 
-        let value = this.entidad?.[this.fieldName];
+        let value = this.entity?.[this.fieldName];
 
         if (value != null && typeof value === 'number') {
             this.el.nativeElement.textContent = new DecimalPipe('es-ES').transform(value, `1.${this.precision}-${this.precision}`);

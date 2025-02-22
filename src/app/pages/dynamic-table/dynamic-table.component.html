@@ -2,7 +2,9 @@
     <app-header title="Dynamic table" withShadow=""/>
 
     <div class="page-container">
-        <f-table class="w-full h-full" [entidades]="entidades()" [paginacion]="paginacion" [fTablaEventos]="tabla">
+
+        <f-table class="w-full h-full" [entities]="entidades()" [pagination]="paginacion()"
+            [fTablaEventos]="tabla" emptyTableText="No hay registros con esos criterios">
             <ng-template #header>
                 <th fwkColumnSorted="nombre" ></th>
                 <th fwkColumnSorted="apellido" [label]="'apellidos'"></th>
@@ -11,11 +13,11 @@
             </ng-template>
 
             <!-- Template para cada fila de la tabla -->
-            <ng-template #body let-entidad>
-                <td fwkRowField="nombre" [entidad]="entidad" fWd="25"> </td>
-                <td fwkRowField="apellido" [entidad]="entidad" fWd="25"></td>
-                <td fwkRowField="sueldo" [entidad]="entidad" fWd="10"></td>
-                <td fwkRowField="directivo" [entidad]="entidad" fWd="10"
+            <ng-template #body let-entity let-index="index">
+                <td fwkRowField="nombre" [entity]="entity" fWd="25"></td>
+                <td fwkRowField="apellido" [entity]="entity" fWd="25"></td>
+                <td fwkRowField="sueldo" [entity]="entity" fWd="10"></td>
+                <td fwkRowField="directivo" [entity]="entity" fWd="10"
                     [trueText]="'Simon'" [falseText]="'Nanai'"></td>
             </ng-template>
         </f-table>

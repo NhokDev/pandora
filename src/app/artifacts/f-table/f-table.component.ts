@@ -8,13 +8,15 @@ import { Component, ContentChild, Input, TemplateRef } from '@angular/core';
 })
 export class TableComponent {
     // Lista de entidades a mostrar (por ejemplo, productos)
-    @Input() entidades: any[] = [];
+    @Input({ required: true }) entities!: any[];
 
     // Objeto de paginación (opcional)
-    @Input() paginacion: any;
+    @Input() pagination: any;
 
     // Si se requiere pasar eventos o métodos, se pueden agregar más inputs
     @Input() fTablaEventos: any;
+
+    @Input() emptyTableText: string = 'No hay registros';
 
     // Capturamos las plantillas definidas en el componente padre mediante Content Projection
     @ContentChild('header', { static: true }) headerTemplate!: TemplateRef<any>;

@@ -8,20 +8,37 @@
         </thead>
         <!-- Cuerpo de la tabla -->
         <tbody class="bg-white divide-y divide-gray-200">
-            @for (entidad of entidades; track $index) {
+            @for (entity of entities; track $index) {
                 <tr class="hover:bg-slate-100">
                     <!-- Se inyecta la entidad en el contexto de la plantilla body -->
-                    <ng-container *ngTemplateOutlet="bodyTemplate; context: {$implicit: entidad}"></ng-container>
+                    <ng-container
+                        *ngTemplateOutlet="bodyTemplate;
+                        context: {
+                            $implicit: entity,
+                            index: $index,
+                            first: $first,
+                            last: $last,
+                            even: $even
+                        }">
+                    </ng-container>
                 </tr>
             }
         </tbody>
     </table>
+
+    @if (entities.length === 0) {
+        <table class="min-w-full divide-y divide-gray-200">
+            <tr>
+                <td class="px-6 py-4 text-sm text-center">{{ emptyTableText }}</td>
+            </tr>
+        </table>
+    }
 </div>
 
 <!-- Ejemplo de sección de paginación (opcional) -->
-<div *ngIf="paginacion" class="mt-4">
+<div *ngIf="pagination" class="mt-4">
     <nav class="flex justify-center">
         <!-- Aquí puedes implementar la lógica de paginación -->
-        <span class="text-gray-600">Página {{ paginacion.paginaActual }} de {{ paginacion.totalPaginas }}</span>
+        <span class="text-gray-600">Página {{ pagination.paginaActual }} de {{ pagination.totalPaginas }}</span>
     </nav>
 </div>

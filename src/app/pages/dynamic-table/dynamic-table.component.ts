@@ -42,10 +42,12 @@ export default class DynamicTableComponent {
         }
     ])
 
-    paginacion = {
+    // public entidades = signal([])
+
+    paginacion = signal({
         "paginaActual": 1,
         "totalPaginas": 7
-    }
+    })
 
     tabla = {}
 }
