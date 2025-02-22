@@ -1,0 +1,86 @@
+<div class="flex flex-col h-full">
+    <app-header [title]="'Directives'"/>
+    <div class="page-container grid grid-cols-4 grid-rows-4 gap-2">
+
+        <div class="card" >
+            <h3> HighlightDirective </h3>
+            <div class="flex flex-row space-x-5 mb-1">
+                <div>
+                    <input type="radio" name="colors" (click)="highlightColor='lightgreen'"> Green
+                </div>
+                <div>
+                    <input type="radio" name="colors" (click)="highlightColor='yellow'"> Yellow
+                </div>
+                <div>
+                    <input type="radio" name="colors" (click)="highlightColor='cyan'"> Cyan
+                </div>
+
+            </div>
+
+            <p [appHighlight]="highlightColor" >Highlight me!</p>
+            <p [appHighlight]="highlightColor" defaultColor="violet">Highlight me too!</p>
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+        <div class="card">
+
+        </div>
+
+    </div>
+
+</div>

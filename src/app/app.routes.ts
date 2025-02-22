@@ -8,6 +8,11 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/dynamic-table/dynamic-table.component')
     },
     {
+        path: 'directive',
+        title: 'Directives',
+        loadComponent: () => import('./pages/directives/directives.component')
+    },
+    {
         path: '',
         redirectTo: 'table',
         pathMatch: 'full'
