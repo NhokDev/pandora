@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { HeaderComponent } from '@app/shared/header/header.component';
 import { TableComponent } from '@app/artifacts/f-table/f-table.component';
 import { DecimalPipe } from '@angular/common';
@@ -11,7 +11,7 @@ import { ColumnSortedDirective } from '@app/artifacts/f-table/directives/column-
     templateUrl: './dynamic-table.component.html',
 })
 export default class DynamicTableComponent {
-    entidades = [
+    public entidades = signal([
         {
             "id": 1,
             "nombre": "Lola",
@@ -40,7 +40,7 @@ export default class DynamicTableComponent {
             "sueldo": 2210.00,
             "directivo": true
         }
-    ]
+    ])
 
     paginacion = {
         "paginaActual": 1,

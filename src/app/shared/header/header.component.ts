@@ -9,7 +9,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
 
-    @Input() title: string = "";
+    @Input({ required: true}) title!: string;
 
     constructor() {}
 
