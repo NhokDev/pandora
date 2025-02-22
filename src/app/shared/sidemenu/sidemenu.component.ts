@@ -11,7 +11,7 @@ import { routes } from '@app/app.routes';
 })
 export class SidemenuComponent {
 
-    sidebarCollapsed: boolean = false;
+    public route = routes
 
     public menuItems = routes
         .filter( route => route && route.path )

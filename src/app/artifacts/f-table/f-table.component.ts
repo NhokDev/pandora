@@ -6,7 +6,7 @@ import { Component, ContentChild, Input, TemplateRef } from '@angular/core';
     imports: [CommonModule],
     templateUrl: './f-table.component.html',
 })
-export default class FTableComponent {
+export class TableComponent {
     // Lista de entidades a mostrar (por ejemplo, productos)
     @Input() entidades: any[] = [];
 

@@ -16,10 +16,10 @@
         @apply text-2xl font-bold;
     }
     h2 {
-        @apply text-xl font-bold;
+        @apply text-xl font-bold mb-2;
     }
     h3 {
-        @apply text-lg font-semibold;
+        @apply text-lg font-semibold mb-1;
     }
 }
 
@@ -36,11 +36,22 @@
 
     .page-container {
         @apply
-            flex-grow
-            m-7 p-5
+            flex flex-grow
+            m-7 p-4
             rounded-2xl
             bg-white
             shadow-lg
-            border-base/50 border-1;
+            border-base/50 border-1
+            overflow-auto;
+    }
+
+    .card {
+        @apply
+            p-3
+            rounded-sm
+            border-2
+            border-base/25
+            overflow-auto
+            truncate;
     }
 }

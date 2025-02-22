@@ -2,24 +2,22 @@
     <app-header [title]="'Dynamic table'"/>
 
     <div class="page-container">
-        <f-table #tabla [entidades]="entidades" [paginacion]="paginacion" [fTablaEventos]="tabla">
+        <f-table class="w-full h-full" [entidades]="entidades" [paginacion]="paginacion" [fTablaEventos]="tabla">
             <ng-template #header>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                     Nombre
-                </th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Apellido
-                </th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Sueldo
-                </th>
-              </ng-template>
+                <th fwkColumnSorted="nombre" ></th>
+                <th fwkColumnSorted="apellido" [label]="'apellidos'"></th>
+                <th fwkColumnSorted="sueldo"></th>
+                <th fwkColumnSorted="directivo"></th>
+            </ng-template>
 
-              <!-- Template para cada fila de la tabla -->
-                <ng-template #body let-entidad>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ entidad.nombre }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ entidad.apellido }}</td>
-                    <td class="px-6 py-4 whitespace-nowrap">{{ entidad.sueldo | number: '1.2-2' }}</td>
-                </ng-template>
+            <!-- Template para cada fila de la tabla -->
+            <ng-template #body let-entidad>
+                <td fwkRowField="nombre" [entidad]="entidad" fWd="25"> </td>
+                <td fwkRowField="apellido" [entidad]="entidad" fWd="25"></td>
+                <td fwkRowField="sueldo" [entidad]="entidad" fWd="10"></td>
+                <td fwkRowField="directivo" [entidad]="entidad" fWd="10"
+                    [trueText]="'Simon'" [falseText]="'Nanai'"></td>
+            </ng-template>
         </f-table>
+    </div>
 </div>
