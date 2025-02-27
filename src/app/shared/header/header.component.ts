@@ -9,7 +9,7 @@ import { booleanAttribute, ChangeDetectionStrategy, Component, Input } from '@an
 })
 export class HeaderComponent {
 
-    @Input({ required: true}) title!: string;
+    @Input({ required: true}) title!: string | undefined;
 
     // Permite que se pueda pasar un booleano como atributo
     @Input({ transform: booleanAttribute}) withShadow: boolean = false;

@@ -1,7 +1,12 @@
 <div class="flex flex-col h-full">
-    <app-header title="Dynamic table" withShadow=""/>
+    <app-header [title]="page_title()" withShadow/>
 
     <div class="page-container">
+
+        <!-- <f-filterbox [cols]="4" [rows]="3">
+
+
+        </f-filterbox> -->
 
         <f-table class="w-full h-full" [entities]="entidades()" [pagination]="paginacion()"
             [fTablaEventos]="tabla" emptyTableText="No hay registros con esos criterios">

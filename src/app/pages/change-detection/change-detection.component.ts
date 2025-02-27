@@ -1,5 +1,7 @@
 import { JsonPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from '@app/shared/header/header.component';
 
 @Component({
@@ -10,8 +12,14 @@ import { HeaderComponent } from '@app/shared/header/header.component';
 })
 export default class ChangeDetectionComponent {
 
+    private route = inject( ActivatedRoute )
+
+    public page_title = toSignal(
+        this.route.title
+    )
+
     public currentEntity = computed(
-        () => `Change detection - ${ this.entidadAsSignal().nombre }`
+        () => `${this.page_title()} - ${ this.entidadAsSignal().nombre }`
     );
 
     public entidadAsSignal = signal({

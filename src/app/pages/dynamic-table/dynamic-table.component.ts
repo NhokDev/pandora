@@ -1,9 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop'
 import { HeaderComponent } from '@app/shared/header/header.component';
 import { TableComponent } from '@app/artifacts/f-table/f-table.component';
-import { DecimalPipe } from '@angular/common';
 import { RowFieldDirective } from '@app/artifacts/f-table/directives/row-field.directive';
 import { ColumnSortedDirective } from '@app/artifacts/f-table/directives/column-sorted.directive';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 @Component({
     selector: 'app-dynamic-table',
@@ -11,6 +13,13 @@ import { ColumnSortedDirective } from '@app/artifacts/f-table/directives/column-
     templateUrl: './dynamic-table.component.html',
 })
 export default class DynamicTableComponent {
+
+    private route = inject( ActivatedRoute )
+
+    public page_title = toSignal(
+        this.route.title
+    )
+
     public entidades = signal([
         {
             "id": 1,
@@ -50,4 +59,6 @@ export default class DynamicTableComponent {
     })
 
     tabla = {}
+
+    constructor() {}
 }

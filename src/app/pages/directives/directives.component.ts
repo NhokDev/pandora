@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from '@app/shared/header/header.component';
 import { HighlightDirective } from '@app/utils/directives/highlight/highlight.directive';
 
@@ -8,6 +10,12 @@ import { HighlightDirective } from '@app/utils/directives/highlight/highlight.di
   templateUrl: './directives.component.html'
 })
 export default class DirectivesComponent {
+
+    private route = inject( ActivatedRoute )
+
+    public page_title = toSignal(
+        this.route.title
+    )
 
     public highlightColor: string = '';
 
