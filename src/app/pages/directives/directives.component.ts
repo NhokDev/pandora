@@ -1,13 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from '@app/shared/header/header.component';
 import { HighlightDirective } from '@app/utils/directives/highlight/highlight.directive';
 
 @Component({
-  selector: 'app-directives',
   imports: [HeaderComponent, HighlightDirective],
-  templateUrl: './directives.component.html'
+  templateUrl: './directives.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class DirectivesComponent {
 

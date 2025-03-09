@@ -5,7 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from '@app/shared/header/header.component';
 
 @Component({
-  selector: 'app-directives',
   imports: [HeaderComponent, JsonPipe],
   templateUrl: './change-detection.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,16 +1,15 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop'
 import { HeaderComponent } from '@app/shared/header/header.component';
 import { TableComponent } from '@app/artifacts/f-table/f-table.component';
 import { RowFieldDirective } from '@app/artifacts/f-table/directives/row-field.directive';
 import { ColumnSortedDirective } from '@app/artifacts/f-table/directives/column-sorted.directive';
 import { ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs';
 
 @Component({
-    selector: 'app-dynamic-table',
     imports: [HeaderComponent, TableComponent, RowFieldDirective, ColumnSortedDirective],
     templateUrl: './dynamic-table.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class DynamicTableComponent {
 
