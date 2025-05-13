@@ -53,4 +53,10 @@
             overflow-auto
             truncate;
     }
+
+
+    .btn-footer-group {
+        @apply sticky bottom-0 bg-white p-3 flex justify-between items-center z-10;
+        box-shadow: 0 -2px 4px 1px rgba(0, 0, 0, 0.2);
+    }
 }

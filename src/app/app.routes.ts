@@ -18,6 +18,16 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/change-detection/change-detection.component')
     },
     {
+        path: 'button-footer',
+        title: 'Button Footer',
+        loadComponent: () => import('./pages/button-footer/button-footer.component')
+    },
+     {
+        path: 'calculator',
+        title: 'Calculator',
+        loadComponent: () => import('./pages/calculator/calculator.component')
+    },
+    {
         path: '',
         redirectTo: 'table',
         pathMatch: 'full'

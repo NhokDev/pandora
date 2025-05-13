@@ -1,0 +1,33 @@
+<div class="flex flex-col h-full">
+    <app-header [title]="page_title()" withShadow/>
+
+    <div class="page-container">
+
+    </div>
+
+    <f-button-footer [entityTst]="entity()" (entityTstReturn)="eventHandler($event)">
+
+        <ng-template #left>
+            <input
+                id="file-upload"
+                type="file"
+                accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                class="hidden"
+            />
+            <label
+                for="file-upload"
+                class="btn btn-sm btn-primary text-white uppercase font-bold">
+                Subir archivo
+            </label>
+
+        </ng-template>
+
+        <ng-template #right>
+            <button
+                class="btn btn-success btn-sm text-white uppercase font-bold"
+                (click)="clickTst()">Botón Der 2</button>
+        </ng-template>
+
+    </f-button-footer>
+
+</div>

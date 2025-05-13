@@ -8,7 +8,7 @@
         </thead>
         <!-- Cuerpo de la tabla -->
         <tbody class="bg-white divide-y divide-gray-200">
-            @for (entity of entities; track $index) {
+            @for (entity of entities(); track $index) {
                 <tr class="hover:bg-slate-100">
                     <!-- Se inyecta la entidad en el contexto de la plantilla body -->
                     <ng-container
@@ -26,10 +26,10 @@
         </tbody>
     </table>
 
-    @if (entities.length === 0) {
+    @if (entities().length === 0) {
         <table class="min-w-full divide-y divide-gray-200">
             <tr>
-                <td class="px-6 py-4 text-sm text-center">{{ emptyTableText }}</td>
+                <td class="px-6 py-4 text-sm text-center">{{ emptyTableText() }}</td>
             </tr>
         </table>
     }
@@ -39,6 +39,6 @@
 <div *ngIf="pagination" class="mt-4">
     <nav class="flex justify-center">
         <!-- Aquí puedes implementar la lógica de paginación -->
-        <span class="text-gray-600">Página {{ pagination.paginaActual }} de {{ pagination.totalPaginas }}</span>
+        <span class="text-gray-600">Página {{ pagination().paginaActual }} de {{ pagination().totalPaginas }}</span>
     </nav>
 </div>
