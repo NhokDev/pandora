@@ -19,7 +19,7 @@ export default class ButtonFooterComponent {
         "description": "Description of entity 1"
     })
 
-    public page_title = toSignal(
+    public page_title = toSignal<string | undefined>(
         this.route.title
     )
 

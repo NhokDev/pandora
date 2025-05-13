@@ -15,7 +15,7 @@ export default class DynamicTableComponent {
 
     private route = inject( ActivatedRoute )
 
-    public page_title = toSignal(
+    public page_title = toSignal<string | undefined>(
         this.route.title
     )
 
