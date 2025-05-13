@@ -25,7 +25,7 @@ export const routes: Routes = [
      {
         path: 'calculator',
         title: 'Calculator',
-        loadComponent: () => import('./pages/calculator/calculator.component')
+        loadComponent: () => import('./pages/calculator/calculator-page.component')
     },
     {
         path: '',
