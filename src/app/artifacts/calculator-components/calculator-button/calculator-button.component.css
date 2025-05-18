@@ -1,11 +1,15 @@
 @reference "tailwindcss";
 
 button {
-    @apply w-full h-16 outline-none focus:outline-none hover:bg-indigo-700/20 text-white/50 text-xl font-light;
+    @apply w-full h-16 outline-none focus:outline-none hover:bg-indigo-800/20 text-white/50 text-xl font-light;
 }
 
 .is-command {
-    @apply bg-indigo-700/10 text-white text-2xl;
+    @apply bg-indigo-700/20 text-white text-2xl;
+}
+
+.is-pressed {
+    @apply bg-indigo-800/20
 }
 
 .is-double-size {
